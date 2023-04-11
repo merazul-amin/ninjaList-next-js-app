@@ -17,7 +17,10 @@ const NinjaHome = ({ users }) => {
         <div>
             <h1>All Ninjas</h1>
             {users?.length}
-            {users?.map(user => <Link href={'/'} className={styles.single}>{user.name}</Link>)}
+            {users?.map(user => <Link
+                href={`/ninjas/${user.id}`}
+                key={user.id}
+                className={styles.single}>{user.name}</Link>)}
         </div>
     );
 };
